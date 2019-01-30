@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" blendMode="DIFFERENCE" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="500.0" opacity="1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ui.controllers.Main_Controller">
+  <children>
+    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" text="Select code" textAlignment="CENTER" textOverrun="ELLIPSIS" VBox.vgrow="NEVER">
+          <labelFor>
+            <ListView fx:id="list_codes" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseClicked="#code_chosen" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+          </labelFor>
+        </Label>
+        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+          <children>
+            <fx:reference source="list_codes" />
+            <TextArea fx:id="code_description" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" wrapText="true" HBox.hgrow="NEVER" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+    <Separator blendMode="DARKEN" cache="true" cacheHint="SCALE" depthTest="INHERIT" prefWidth="200.0" />
+    <VBox id="v_box_1" fx:id="languages_box" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
+      <children>
+        <CheckBox fx:id="checkBox_singleLang" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cBoxSingleLang" text="Use single lang" VBox.vgrow="NEVER" />
+        <HBox alignment="CENTER" fillHeight="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+          <children>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS">
+              <children>
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Lang_from">
+                  <labelFor>
+                    <ListView id="Lang_from" fx:id="lang_from" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  </labelFor>
+                </Label>
+                <fx:reference source="lang_from" />
+              </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="-1.0" HBox.hgrow="NEVER" />
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS">
+              <children>
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Lang_to">
+                  <labelFor>
+                    <ListView id="Lang_to" fx:id="lang_to" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  </labelFor>
+                </Label>
+                <fx:reference source="lang_to" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+    <Separator blendMode="DARKEN" prefWidth="200.0" />
+    <TextArea fx:id="inputText_area" prefWidth="200.0" promptText="Input text to code" wrapText="true" VBox.vgrow="ALWAYS" />
+    <Separator prefWidth="200.0" />
+    <HBox id="Set_key" fx:id="setKey_box" alignment="CENTER_RIGHT" disable="false" fillHeight="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="200.0" VBox.vgrow="NEVER">
+      <children>
+        <VBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+          <children>
+            <RadioButton fx:id="radioBut_toCode" mnemonicParsing="false" text="To code" />
+            <RadioButton fx:id="radioBut_toDecode" mnemonicParsing="false" text="To decode" />
+          </children>
+        </VBox>
+        <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="-1.0" HBox.hgrow="ALWAYS" />
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Button fx:id="setKey_button" mnemonicParsing="false" onAction="#openSetKeyWindow" text="Set_key" textAlignment="LEFT" />
+            <CheckBox fx:id="checkBox_isOkKey" alignment="CENTER_LEFT" allowIndeterminate="false" blendMode="DARKEN" disable="true" focusTraversable="false" indeterminate="false" mnemonicParsing="false" opacity="0.68" selected="false" text="is Key settled" wrapText="false" />
+          </children>
+        </HBox>
+      </children>
+    </HBox>
+    <Separator prefWidth="200.0" />
+    <HBox fx:id="down_mainButton_box" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="200.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="label_test_1" text="Label" />
+        <Button mnemonicParsing="false" text="Translate" />
+      </children>
+    </HBox>
+  </children>
+</VBox>
